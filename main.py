@@ -4,10 +4,11 @@ import os
 
 app = FastAPI()
 
-BOT_TOKEN = os.getenv("8659021262:AAHLH0VcPf-KQuf2Rev7h7n23gEs78X1P08")
-WEBHOOK_URL = os.getenv("https://telegramwebhookspeedhub.onrender.com/")
+# ✅ use ENV VARIABLES properly
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
-TELEGRAM_API = "https://api.telegram.org/bot8659021262:AAHLH0VcPf-KQuf2Rev7h7n23gEs78X1P08"
+TELEGRAM_API = f"https://api.telegram.org/bot{BOT_TOKEN}"
 
 @app.on_event("startup")
 def set_webhook():
